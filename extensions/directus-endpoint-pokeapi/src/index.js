@@ -94,6 +94,7 @@ export default {
           const newPhoneNumber = await phoneNumberService.createOne({
             id: from,
             number: from,
+            interactedBusinessNumberByCustomer: business_phone_number_id,
           });
 
           console.log("New phone number created:", newPhoneNumber);
@@ -111,6 +112,7 @@ export default {
           status: "sent",
           contacts_id: business_phone_number_id, //make it contacts_id: `91${to}`;
         });
+
         // Send response with created message and updated item
         res.send({ newMessage });
 
